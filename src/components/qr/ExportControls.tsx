@@ -30,7 +30,9 @@ export function ExportControls({ data, settings }: { data: string; settings: QRS
   async function copyPng() {
     try {
       const qr = await makeInstance("png");
-      const blob: Blob = await qr.getRawData("png");
+      const raw = await qr.getRawData("png");
+      if (!raw) throw new Error("no data");
+      const blob = raw instanceof Blob ? raw : new Blob([raw as unknown as ArrayBuffer], { type: "image/png" });
       await navigator.clipboard.write([new ClipboardItem({ "image/png": blob })]);
       setCopied(true);
       setTimeout(() => setCopied(false), 1500);
