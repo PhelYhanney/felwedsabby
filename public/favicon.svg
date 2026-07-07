@@ -1,0 +1,28 @@
+<svg viewBox="0 0 720 720" xmlns="http://www.w3.org/2000/svg">
+  <!-- Blue background -->
+  <rect width="720" height="720" rx="80" fill="#4F46E5"/>
+  
+  <!-- Top left: Yellow square with blue square inside -->
+  <rect x="95" y="95" width="225" height="225" rx="20" fill="#FFEB3B"/>
+  <rect x="143" y="143" width="130" height="130" fill="#4F46E5"/>
+  
+  <!-- Top right: Light yellow square with blue square inside -->
+  <rect x="400" y="95" width="225" height="225" rx="20" fill="#FFFACD"/>
+  <rect x="495" y="143" width="130" height="130" fill="#4F46E5"/>
+  
+  <!-- Middle divider: Light blue rounded rectangle -->
+  <rect x="95" y="360" width="530" height="35" rx="17" fill="#9CA3E0"/>
+  
+  <!-- Bottom left: Yellow rounded rectangle -->
+  <rect x="95" y="450" width="50" height="120" rx="25" fill="#FFEB3B"/>
+  
+  <!-- Bottom left-center: Light yellow rounded rectangle -->
+  <rect x="185" y="480" width="100" height="90" rx="15" fill="#FFFACD"/>
+  
+  <!-- Bottom center: Light blue rounded rectangle -->
+  <rect x="310" y="545" width="130" height="45" rx="22" fill="#9CA3E0"/>
+  
+  <!-- Bottom right: Yellow square with blue square inside -->
+  <rect x="450" y="450" width="225" height="225" rx="20" fill="#FFEB3B"/>
+  <rect x="495" y="495" width="130" height="130" fill="#4F46E5"/>
+</svg>
