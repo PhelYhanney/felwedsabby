@@ -14,7 +14,45 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      qr_files: {
+        Row: {
+          content_type: string | null
+          created_at: string
+          download_count: number
+          expires_at: string | null
+          filename: string
+          id: string
+          max_downloads: number | null
+          password_hash: string | null
+          size: number
+          storage_path: string
+        }
+        Insert: {
+          content_type?: string | null
+          created_at?: string
+          download_count?: number
+          expires_at?: string | null
+          filename: string
+          id?: string
+          max_downloads?: number | null
+          password_hash?: string | null
+          size: number
+          storage_path: string
+        }
+        Update: {
+          content_type?: string | null
+          created_at?: string
+          download_count?: number
+          expires_at?: string | null
+          filename?: string
+          id?: string
+          max_downloads?: number | null
+          password_hash?: string | null
+          size?: number
+          storage_path?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
