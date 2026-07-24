@@ -23,7 +23,7 @@ export interface ContentState {
 }
 
 export const defaultContent: ContentState = {
-  url: "https://lovable.dev",
+  url: "https://mywebsite.com",
   text: "Hello, world!",
   wifi: { ssid: "MyNetwork", password: "", encryption: "WPA", hidden: false },
   vcard: { firstName: "Ada", lastName: "Lovelace", org: "", phone: "", email: "", url: "" },
