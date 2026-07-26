@@ -9,7 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { sha256 } from "@/lib/hash";
 
-const MAX_SIZE = 25 * 1024 * 1024; // 25 MB
+const MAX_SIZE = 100 * 1024 * 1024; // 100 MB
 
 type ExpiryChoice = "1h" | "24h" | "7d" | "never";
 
@@ -48,7 +48,7 @@ export function FileUploader({
 
   async function upload(f: File) {
     if (f.size > MAX_SIZE) {
-      toast.error("File exceeds 25 MB limit");
+      toast.error("File exceeds 100 MB limit");
       return;
     }
     setFile(f);
@@ -118,7 +118,7 @@ export function FileUploader({
         <div className="text-sm font-medium">
           {dragging ? "Drop to upload" : "Click or drag a file to upload"}
         </div>
-        <div className="text-xs text-muted-foreground">Max 25 MB · any file type</div>
+        <div className="text-xs text-muted-foreground">Max 100 MB · any file type</div>
         <input
           ref={inputRef}
           type="file"
