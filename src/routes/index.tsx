@@ -10,6 +10,7 @@ import { defaultSettings, type QRSettings } from "@/components/qr/types";
 import { buildQrString, defaultContent, type ContentState, type ContentType } from "@/lib/qr-content";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
+import { AccountMenu } from "@/components/AccountMenu";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -59,9 +60,12 @@ function Index() {
             <div className="text-[11px] text-muted-foreground">Beautiful codes · secure files</div>
           </div>
         </div>
-        <Button variant="ghost" size="icon" onClick={() => setDark((d) => !d)} aria-label="Toggle theme">
-          {dark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-        </Button>
+        <div className="flex items-center gap-2">
+          <Button variant="ghost" size="icon" onClick={() => setDark((d) => !d)} aria-label="Toggle theme">
+            {dark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+          </Button>
+          <AccountMenu />
+        </div>
       </header>
 
       <main className="mx-auto grid max-w-7xl gap-6 px-6 pb-16 lg:grid-cols-[1fr_400px]">
