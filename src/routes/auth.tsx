@@ -34,18 +34,11 @@ function AuthPage() {
   const [sent, setSent] = useState(false);
 
   useEffect(() => {
-    const handleEmailVerification = async () => {
-      const hash = window.location.hash;
-      if (!hash || !hash.includes("access_token")) return;
-
-      const { error } = await supabase.auth.getSessionFromUrl();
-      if (!error) {
-        window.history.replaceState({}, document.title, window.location.pathname + window.location.search);
-        navigate({ to: "/", replace: true });
-      }
-    };
-
-    void handleEmailVerification();
+    // supabase-js detects the email-confirmation tokens in the URL hash itself;
+    // we only tidy the address bar afterwards.
+    if (window.location.hash.includes("access_token")) {
+      window.history.replaceState({}, document.title, window.location.pathname + window.location.search);
+    }
     if (!loading && user) navigate({ to: "/", replace: true });
   }, [user, loading, navigate]);
 
