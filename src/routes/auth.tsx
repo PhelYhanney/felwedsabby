@@ -34,6 +34,18 @@ function AuthPage() {
   const [sent, setSent] = useState(false);
 
   useEffect(() => {
+    const handleEmailVerification = async () => {
+      const hash = window.location.hash;
+      if (!hash || !hash.includes("access_token")) return;
+
+      const { error } = await supabase.auth.getSessionFromUrl();
+      if (!error) {
+        window.history.replaceState({}, document.title, window.location.pathname + window.location.search);
+        navigate({ to: "/", replace: true });
+      }
+    };
+
+    void handleEmailVerification();
     if (!loading && user) navigate({ to: "/", replace: true });
   }, [user, loading, navigate]);
 
@@ -54,7 +66,7 @@ function AuthPage() {
       email,
       password,
       options: {
-        emailRedirectTo: `${window.location.origin}/`,
+        emailRedirectTo: `${window.location.origin}/auth`,
         data: { display_name: displayName },
       },
     });
