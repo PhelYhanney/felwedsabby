@@ -1,0 +1,13 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1789744664922,
+      "tag": "0000_grant_qr_files_access",
+      "breakpoints": true
+    }
+  ]
+}
